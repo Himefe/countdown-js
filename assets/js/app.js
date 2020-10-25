@@ -1,7 +1,7 @@
 import Countdown from './modules/countdown.js';
 
 const diasProNatal = new Countdown('24 December 2020 23:59:59 GMT-0300');
-console.log(diasProNatal.total);
+
 
 const diasHtml = document.querySelector('.diasNumero');
 const horasHtml = document.querySelector('.horasNumero');
