@@ -1,6 +1,6 @@
 import Countdown from './modules/countdown.js';
 
-const diasProNatal = new Countdown(`24 December ${total.year} 23:59:59 GMT-0300`);
+const diasProNatal = new Countdown(`24 December ${this.total.year} 23:59:59 GMT-0300`);
 
 
 const diasHtml = document.querySelector('.diasNumero');
