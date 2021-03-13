@@ -1,10 +1,18 @@
 import Countdown from './modules/countdown.js';
 
-let datinha = new Date();
-let actualDate =  datinha.getYear();
+let attYear = 2021;
+
+let diasInner = document.querySelector('.diasNumero').innerText;
+let horasInner = document.querySelector('.diasNumero').innerText;
+let minutosInner = document.querySelector('.diasNumero').innerText;
+let segundosInner = document.querySelector('.diasNumero').innerText;
+
+if(diasInner, horasInner, minutosInner, segundosInner == 0) {
+    attYear++;
+}
 
 
-const diasProNatal = new Countdown(`24 December ${actualDate} 23:59:59 GMT-0300`);
+const diasProNatal = new Countdown(`24 December ${attYear} 23:59:59 GMT-0300`);
 
 
 const diasHtml = document.querySelector('.diasNumero');
