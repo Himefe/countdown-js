@@ -23,21 +23,16 @@ export default class Countdown {
     get seconds(){
         return Math.floor(this._timeTempDiff / 1000);
     }
-    get year(){
-        return _actualDate.year();
-    }
     get total(){
         const days = this.days;
         const hours = this.hours % 24;
         const minutes = this.minutes % 60;
         const seconds = this.seconds % 60;
-        const year = this.year;
         return {
             days,
             hours,
             minutes,
             seconds,
-            year
         }     
     }
 }
