@@ -7,7 +7,7 @@ let horasInner = document.querySelector('.diasNumero').innerText;
 let minutosInner = document.querySelector('.diasNumero').innerText;
 let segundosInner = document.querySelector('.diasNumero').innerText;
 
-if(diasInner, horasInner, minutosInner == 0 && segundosInner == 1) {
+if(diasInner == 0 && horasInner == 0 && minutosInner == 0 && segundosInner == 1) {
     attYear++;
 }
 
