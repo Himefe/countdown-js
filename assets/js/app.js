@@ -1,6 +1,6 @@
 import Countdown from './modules/countdown.js';
 
-let attYear = 2021;
+let attYear = 2022;
 
 let diasInner = document.querySelector('.diasNumero').innerText;
 let horasInner = document.querySelector('.diasNumero').innerText;
