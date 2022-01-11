@@ -7,9 +7,7 @@ let horasInner = document.querySelector('.diasNumero').innerText;
 let minutosInner = document.querySelector('.diasNumero').innerText;
 let segundosInner = document.querySelector('.diasNumero').innerText;
 
-if(diasInner == 0 && horasInner == 0 && minutosInner == 0 && segundosInner == 1) {
-    attYear++;
-}
+
 
 
 const diasProNatal = new Countdown(`24 December ${attYear} 23:59:59 GMT-0300`);
@@ -25,6 +23,10 @@ setInterval(() => {
     horasHtml.innerText = diasProNatal.total.hours;
     const attMinutes =  minutosHtml.innerText = diasProNatal.total.minutes;
     const attSeconds = segundosHtml.innerText = diasProNatal.total.seconds;
+    
+    if(diasInner == 0 && horasInner == 0 && minutosInner == 0 && segundosInner == 1) {
+    attYear++;
+}
     
 
 }, 1000);
