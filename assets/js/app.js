@@ -1,39 +1,33 @@
-import Countdown from './modules/countdown.js';
+import Countdown from "./modules/countdown.js";
 
-let attYear = 2022;
+const data = new Date();
 
-let diasInner = document.querySelector('.diasNumero').innerText;
-let horasInner = document.querySelector('.diasNumero').innerText;
-let minutosInner = document.querySelector('.diasNumero').innerText;
-let segundosInner = document.querySelector('.diasNumero').innerText;
+const anoAtual = data.getFullYear();
+const diaAtual = data.getDate();
+const mesAtual = data.getMonth();
 
+let intervalo;
+let attYear = anoAtual;
 
+let diasProNatal = new Countdown(`24 December ${attYear} 23:59:59 GMT-0300`);
 
+const diasHtml = document.querySelector(".diasNumero");
+const horasHtml = document.querySelector(".horasNumero");
+const minutosHtml = document.querySelector(".minutosNumero");
+const segundosHtml = document.querySelector(".segundosNumero");
 
-const diasProNatal = new Countdown(`24 December ${attYear} 23:59:59 GMT-0300`);
-
-
-const diasHtml = document.querySelector('.diasNumero');
-const horasHtml = document.querySelector('.horasNumero');
-const minutosHtml = document.querySelector('.minutosNumero');
-const segundosHtml = document.querySelector('.segundosNumero');
-
-setInterval(() => {
+const initIntervalo = () => {
+  intervalo = setInterval(() => {
+    if (mesAtual == 11 && diaAtual >= 25) {
+      diasProNatal = new Countdown(
+        `24 December ${attYear + 1} 23:59:59 GMT-0300`
+      );
+    }
     diasHtml.innerText = diasProNatal.total.days;
     horasHtml.innerText = diasProNatal.total.hours;
-    const attMinutes =  minutosHtml.innerText = diasProNatal.total.minutes;
-    const attSeconds = segundosHtml.innerText = diasProNatal.total.seconds;
-    
-    if(diasInner == 0 && horasInner == 0 && minutosInner == 0 && segundosInner == 1) {
-    attYear++;
-}
-    
+    minutosHtml.innerText = diasProNatal.total.minutes;
+    segundosHtml.innerText = diasProNatal.total.seconds;
+  }, 1000);
+};
 
-}, 1000);
-
-
-
-
-
-
-
+initIntervalo();
